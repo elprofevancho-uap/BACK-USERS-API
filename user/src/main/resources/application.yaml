@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: user
+  datasource:
+    url: jdbc:postgresql://localhost:5432/usersuap
+    username: familialuna
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update # 'update' adapta las tablas automáticamente (ideal para desarrollo)
+    show-sql: true     # Muestra las consultas SQL en la consola (muy útil para debug)
+    properties:
+      hibernate:
+        format_sql: true # Hace que el SQL en consola sea legible
+
+management:
+  datadog:
+    metrics:
+      export:
+        enabled: false
