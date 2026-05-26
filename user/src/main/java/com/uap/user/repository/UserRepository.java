@@ -5,8 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.uap.user.dto.entity.User;
 
+import java.util.List;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     // Al extender JpaRepository<Entidad, Tipo_De_ID> ya tienes el CRUD completo.
     // Podés agregar métodos personalizados acá si lo necesitas en el futuro.
+    List<User> findByFullName(String fullName);
 }
