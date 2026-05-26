@@ -13,15 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users") // Ruta base para todos los endpoints de usuarios
 public class UserController {
-
-     @GetMapping
-    public ResponseEntity<String> getAllUsers() {
-       return ResponseEntity.ok("users");
-    }
-
-
-
-
     
     private final UserService userService;
 
@@ -30,18 +21,17 @@ public class UserController {
         this.userService = userService;
     }
 
-    /**
+    /*
      * Endpoint para obtener la lista completa de usuarios.
-     * Ruta: GET http://localhost:8080/api/users
-    
-    @GetMapping
+     * Ruta: GET http://localhost:8080/api/users/list
+    */
+    @GetMapping("list")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.findAllUsers();
         
         // Es una buena práctica envolver la respuesta en un ResponseEntity
         // para manejar correctamente los estados HTTP (en este caso, 200 OK)
-        return ResponseEntity.ok("users");
+        return ResponseEntity.ok(users);
     }
-*/
-   
+
 }
