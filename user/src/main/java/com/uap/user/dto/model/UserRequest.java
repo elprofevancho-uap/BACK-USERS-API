@@ -19,4 +19,8 @@ public class UserRequest {
 
     @NotEmpty
     private String email;
+
+    @NotNull
+    private String password;
+
 }
